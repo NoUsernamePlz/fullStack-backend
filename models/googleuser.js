@@ -1,0 +1,12 @@
+
+const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema({
+	googleId: { type: String, required: true },
+    displayName: { type: String, required: true },
+	email: { type: String, required: true,unique:true},
+	
+});
+
+const Googleuser = mongoose.model("googleuser", UserSchema);
+module.exports = Googleuser;
