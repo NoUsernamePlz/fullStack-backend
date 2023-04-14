@@ -17,7 +17,7 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://fullstack-frontend-hfah.onrender.com",
 		methods: "GET,POST,PUT,DELETE",
 		credentials: true,
 }));
@@ -43,7 +43,7 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'em
 
 
 app.get('/auth/google/callback',
-  passport.authenticate('google', { successRedirect: 'http://localhost:3000/', failureRedirect: '/login' }));
+  passport.authenticate('google', { successRedirect: 'https://fullstack-frontend-hfah.onrender.com', failureRedirect: '/login' }));
 
 app.get("/getAllcontent", async (req,res ) => {
     try{
